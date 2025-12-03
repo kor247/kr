@@ -1,0 +1,26 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: #ebf7ff;
+}
+
+/* 이미지 전체 영역 */
+.full-bg {
+    width: 100%;
+    min-height: 100vh;   /* 화면 높이만큼 채움 */
+    background: #ebf7ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;     /* 넘치는 이미지 잘라냄 */
+}
+
+/* 이미지 스타일 */
+.full-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;          /* 화면 꽉 채우기 */
+    object-position: center;    /* 쏠림 방지 중앙정렬 */
+    display: block;
+}
