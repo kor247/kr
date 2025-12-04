@@ -2,24 +2,35 @@ html, body {
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100%;
     background: #ebf7ff;
 }
 
+/* 기본 배경 컨테이너 */
 .full-bg {
-    position: fixed; 
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     background: #ebf7ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
 }
 
+/* 모바일 기본 (100% 꽉 채우기) */
 .full-bg img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center center;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
     display: block;
+}
+
+/* 🔥 PC에서 과도하게 늘어나는 것 방지 */
+@media (min-width: 1024px) {
+    .full-bg img {
+        width: 100%;
+        max-width: 1140px;   /* 👉 PC 최대 가로폭 제한 (원하면 1600, 1800 가능) */
+        height: auto;
+        object-fit: contain;
+    }
 }
