@@ -5,22 +5,32 @@ html, body {
     background: #ebf7ff;
 }
 
-/* ÀÌ¹ÌÁö ÀüÃ¼ ¿µ¿ª */
+/* ê¸°ë³¸ ë°°ê²½ ì»¨í…Œì´ë„ˆ */
 .full-bg {
     width: 100%;
-    min-height: 100vh;   /* È­¸é ³ôÀÌ¸¸Å­ Ã¤¿ò */
+    min-height: 100vh;
     background: #ebf7ff;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;     /* ³ÑÄ¡´Â ÀÌ¹ÌÁö Àß¶ó³¿ */
+    overflow: hidden;
 }
 
-/* ÀÌ¹ÌÁö ½ºÅ¸ÀÏ */
+/* ëª¨ë°”ì¼ ê¸°ë³¸ (100% ê½‰ ì±„ìš°ê¸°) */
 .full-bg img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;          /* È­¸é ²Ë Ã¤¿ì±â */
-    object-position: center;    /* ½ò¸² ¹æÁö Áß¾ÓÁ¤·Ä */
+    height: auto;
+    object-fit: contain;
+    object-position: center;
     display: block;
+}
+
+/* ğŸ”¥ PCì—ì„œ ê³¼ë„í•˜ê²Œ ëŠ˜ì–´ë‚˜ëŠ” ê²ƒ ë°©ì§€ */
+@media (min-width: 1024px) {
+    .full-bg img {
+        width: 100%;
+        max-width: 1140px;   /* ğŸ‘‰ PC ìµœëŒ€ ê°€ë¡œí­ ì œí•œ (ì›í•˜ë©´ 1600, 1800 ê°€ëŠ¥) */
+        height: auto;
+        object-fit: contain;
+    }
 }
