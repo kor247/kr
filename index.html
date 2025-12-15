@@ -20,46 +20,60 @@
     <meta property="og:type" content="website">
 
     <link rel="stylesheet" href="assets/css/style.css">
-	<link rel="shortcut icon" type="image/x-icon" href="assets/img/한비재 파비콘.png" />
-
-    <!-- ✅ 추가한 것만: 이미지 위 투명 버튼(전화/채널톡) -->
-    <style>
-        .btn-layer{ position:relative; }
-        .overlay-btn{
-            position:absolute;
-            display:block;
-            z-index:10;
-            background:transparent;
-        }
-
-        /* 전화문의 버튼 2개 */
-        .btn-phone-1{ left:7.3394%; top:19.53125%; width:85.3211%; height:2.734375%; }
-        .btn-phone-2{ left:7.9511%; top:94.677734%; width:84.40367%; height:2.734375%; }
-
-        /* 채널톡 문의 버튼 2개 */
-        .btn-chat-1{ left:7.03364%; top:21.630859%; width:85.62691%; height:2.734375%; }
-        .btn-chat-2{ left:7.9511%; top:96.777344%; width:84.40367%; height:2.734375%; }
-    </style>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/한비재 파비콘.png" />
 </head>
 
 <body>
 
     <div class="full-bg">
-        <!-- ✅ 추가: 버튼 레이어(배율/레이아웃 건드리지 않음) -->
-        <div class="btn-layer">
+        <!-- ✅ 기존 CSS 배율 유지 + 버튼만 얹기 위한 래퍼(HTML에서만 처리) -->
+        <div
+            style="
+                position: relative;
+                width: 100%;
+                max-width: 1140px;  /* 기존 CSS의 PC max-width와 동일 */
+            "
+        >
             <img src="assets/img/한국비상금재단.png" alt="한국비상금재단 대표 이미지">
 
-            <!-- ✅ 전화문의(상단) -->
-            <a class="overlay-btn btn-phone-1" href="tel:1661-5330" aria-label="전화문의 1661-5330"></a>
+            <!-- ✅ 전화문의 버튼 1 (상단) -->
+            <a href="tel:1661-5330"
+               aria-label="전화문의 1661-5330"
+               style="
+                    position:absolute; z-index:10; display:block; background:transparent;
+                    left:7.3394%; top:19.53125%; width:85.3211%; height:2.734375%;
+               ">
+            </a>
 
-            <!-- ✅ 채널톡문의(상단) -->
-            <a class="overlay-btn btn-chat-1" href="https://24kr.channel.io/" target="_blank" rel="noopener" aria-label="채널톡 문의"></a>
+            <!-- ✅ 채널톡 문의 버튼 1 (상단) -->
+            <a href="https://24kr.channel.io/"
+               target="_blank" rel="noopener"
+               aria-label="채널톡 문의"
+               style="
+                    position:absolute; z-index:10; display:block; background:transparent;
+                    left:7.03364%; top:21.630859%; width:85.62691%; height:2.734375%;
+               ">
+            </a>
 
-            <!-- ✅ 전화문의(하단) -->
-            <a class="overlay-btn btn-phone-2" href="tel:1661-5330" aria-label="전화문의 1661-5330"></a>
+            <!-- ✅ 전화문의 버튼 2 (하단) -->
+            <a href="tel:1661-5330"
+               aria-label="전화문의 1661-5330"
+               style="
+                    position:absolute; z-index:10; display:block; background:transparent;
+                    left:7.9511%; top:94.677734%; width:84.40367%; height:2.734375%;
+               ">
+            </a>
 
-            <!-- ✅ 채널톡문의(하단) -->
-            <a class="overlay-btn btn-chat-2" href="https://24kr.channel.io/" target="_blank" rel="noopener" aria-label="채널톡 문의"></a>
+            <!-- ✅ 채널톡 문의 버튼 2 (하단) -->
+            <a href="https://24kr.channel.io/"
+               target="_blank" rel="noopener"
+               aria-label="채널톡 문의"
+               style="
+                    position:absolute; z-index:10; display:block; background:transparent;
+                    left:7.9511%; top:96.777344%; width:84.40367%; height:2.734375%;
+               ">
+            </a>
+
         </div>
     </div>
 
@@ -99,12 +113,14 @@
         "pluginKey": "여기에_채널톡_KEY"
     });
     </script>
-<script>
-  (function(){var w=window;if(w.ChannelIO){return w.console.error("ChannelIO script included twice.");}var ch=function(){ch.c(arguments);};ch.q=[];ch.c=function(args){ch.q.push(args);};w.ChannelIO=ch;function l(){if(w.ChannelIOInitialized){return;}w.ChannelIOInitialized=true;var s=document.createElement("script");s.type="text/javascript";s.async=true;s.src="https://cdn.channel.io/plugin/ch-plugin-web.js";var x=document.getElementsByTagName("script")[0];if(x.parentNode){x.parentNode.insertBefore(s,x);}}if(document.readyState==="complete"){l();}else{w.addEventListener("DOMContentLoaded",l);w.addEventListener("load",l);}})();
 
-  ChannelIO('boot', {
-    "pluginKey": "d1029513-902a-4c79-a175-22238c3bf21b"
-  });
-</script>
+    <script>
+      (function(){var w=window;if(w.ChannelIO){return w.console.error("ChannelIO script included twice.");}var ch=function(){ch.c(arguments);};ch.q=[];ch.c=function(args){ch.q.push(args);};w.ChannelIO=ch;function l(){if(w.ChannelIOInitialized){return;}w.ChannelIOInitialized=true;var s=document.createElement("script");s.type="text/javascript";s.async=true;s.src="https://cdn.channel.io/plugin/ch-plugin-web.js";var x=document.getElementsByTagName("script")[0];if(x.parentNode){x.parentNode.insertBefore(s,x);}}if(document.readyState==="complete"){l();}else{w.addEventListener("DOMContentLoaded",l);w.addEventListener("load",l);}})();
+
+      ChannelIO('boot', {
+        "pluginKey": "d1029513-902a-4c79-a175-22238c3bf21b"
+      });
+    </script>
+
 </body>
 </html>
