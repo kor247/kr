@@ -21,12 +21,53 @@
 
     <link rel="stylesheet" href="assets/css/style.css">
 	<link rel="shortcut icon" type="image/x-icon" href="assets/img/한비재 파비콘.png" />
+
+    <!-- ✅ 투명 버튼(전화/채널톡) 오버레이 -->
+    <style>
+        .full-bg{
+            position: relative;
+            width: 100%;
+            max-width: 327px;   /* 이미지 원본 폭 기준(필요시 제거 가능) */
+            margin: 0 auto;
+        }
+        .full-bg img{
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .overlay-btn{
+            position: absolute;
+            display: block;
+            z-index: 10;
+            background: rgba(0,0,0,0);
+        }
+
+        /* 전화문의 버튼 2개 */
+        .btn-phone-1{ left:7.3394%; top:19.53125%; width:85.3211%; height:2.734375%; }
+        .btn-phone-2{ left:7.9511%; top:94.677734%; width:84.40367%; height:2.734375%; }
+
+        /* 채널톡 문의 버튼 2개 */
+        .btn-chat-1{ left:7.03364%; top:21.630859%; width:85.62691%; height:2.734375%; }
+        .btn-chat-2{ left:7.9511%; top:96.777344%; width:84.40367%; height:2.734375%; }
+    </style>
 </head>
 
 <body>
 
     <div class="full-bg">
         <img src="assets/img/한국비상금재단.png" alt="한국비상금재단 대표 이미지">
+
+        <!-- ✅ 전화문의(상단) -->
+        <a class="overlay-btn btn-phone-1" href="tel:1661-5330" aria-label="전화문의 1661-5330"></a>
+
+        <!-- ✅ 채널톡문의(상단) -->
+        <a class="overlay-btn btn-chat-1" href="https://24kr.channel.io/" target="_blank" rel="noopener" aria-label="채널톡 문의"></a>
+
+        <!-- ✅ 전화문의(하단) -->
+        <a class="overlay-btn btn-phone-2" href="tel:1661-5330" aria-label="전화문의 1661-5330"></a>
+
+        <!-- ✅ 채널톡문의(하단) -->
+        <a class="overlay-btn btn-chat-2" href="https://24kr.channel.io/" target="_blank" rel="noopener" aria-label="채널톡 문의"></a>
     </div>
 
     <!-- 채널톡 -->
