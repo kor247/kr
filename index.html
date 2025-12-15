@@ -22,24 +22,14 @@
     <link rel="stylesheet" href="assets/css/style.css">
 	<link rel="shortcut icon" type="image/x-icon" href="assets/img/한비재 파비콘.png" />
 
-    <!-- ✅ 투명 버튼(전화/채널톡) 오버레이 -->
+    <!-- ✅ 추가한 것만: 이미지 위 투명 버튼(전화/채널톡) -->
     <style>
-        .full-bg{
-            position: relative;
-            width: 100%;
-            max-width: 327px;   /* 이미지 원본 폭 기준(필요시 제거 가능) */
-            margin: 0 auto;
-        }
-        .full-bg img{
-            width: 100%;
-            height: auto;
-            display: block;
-        }
+        .btn-layer{ position:relative; }
         .overlay-btn{
-            position: absolute;
-            display: block;
-            z-index: 10;
-            background: rgba(0,0,0,0);
+            position:absolute;
+            display:block;
+            z-index:10;
+            background:transparent;
         }
 
         /* 전화문의 버튼 2개 */
@@ -55,19 +45,22 @@
 <body>
 
     <div class="full-bg">
-        <img src="assets/img/한국비상금재단.png" alt="한국비상금재단 대표 이미지">
+        <!-- ✅ 추가: 버튼 레이어(배율/레이아웃 건드리지 않음) -->
+        <div class="btn-layer">
+            <img src="assets/img/한국비상금재단.png" alt="한국비상금재단 대표 이미지">
 
-        <!-- ✅ 전화문의(상단) -->
-        <a class="overlay-btn btn-phone-1" href="tel:1661-5330" aria-label="전화문의 1661-5330"></a>
+            <!-- ✅ 전화문의(상단) -->
+            <a class="overlay-btn btn-phone-1" href="tel:1661-5330" aria-label="전화문의 1661-5330"></a>
 
-        <!-- ✅ 채널톡문의(상단) -->
-        <a class="overlay-btn btn-chat-1" href="https://24kr.channel.io/" target="_blank" rel="noopener" aria-label="채널톡 문의"></a>
+            <!-- ✅ 채널톡문의(상단) -->
+            <a class="overlay-btn btn-chat-1" href="https://24kr.channel.io/" target="_blank" rel="noopener" aria-label="채널톡 문의"></a>
 
-        <!-- ✅ 전화문의(하단) -->
-        <a class="overlay-btn btn-phone-2" href="tel:1661-5330" aria-label="전화문의 1661-5330"></a>
+            <!-- ✅ 전화문의(하단) -->
+            <a class="overlay-btn btn-phone-2" href="tel:1661-5330" aria-label="전화문의 1661-5330"></a>
 
-        <!-- ✅ 채널톡문의(하단) -->
-        <a class="overlay-btn btn-chat-2" href="https://24kr.channel.io/" target="_blank" rel="noopener" aria-label="채널톡 문의"></a>
+            <!-- ✅ 채널톡문의(하단) -->
+            <a class="overlay-btn btn-chat-2" href="https://24kr.channel.io/" target="_blank" rel="noopener" aria-label="채널톡 문의"></a>
+        </div>
     </div>
 
     <!-- 채널톡 -->
